@@ -89,7 +89,7 @@ def send_verify(request):
             " submitting your problem of the week solutions.\n"+\
             settings.SITE_URL+"/student/verify/" + request.POST['uwinid'] + "/"+\
             verify_hash,
-            "noreply@potw.quinnftw.com",
+            "noreply@potw.cs.uwindsor.ca",
             [request.POST['uwinid'] + "@uwindsor.ca"],
             fail_silently=False)
 
@@ -123,7 +123,7 @@ def verify(request, uwinid, verify_hash):
                 submit_code = s_code)
         send_mail("uWindsor POTW - Submission Code",
                 "Your submission code is " + s_code + ", keep it safe.",
-                "noreply@potw.quinnftw.com",
+                "noreply@potw.cs.uwindsor.ca",
                 [uwinid + "@uwindsor.ca"],
                 fail_silently=False)
         return render(request, "student/verify_success.html", {"code" : s_code})

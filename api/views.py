@@ -12,7 +12,7 @@ def cors_json(resp):
 
 def solvers(request):
     # TODO - change this when someone else runs the show.
-    students = Student.objects.exclude(student_id="perfettq")
+    students = Student.objects.exclude(student_id="rorsethj")
 
     def latest_or_zero(student):
         try:

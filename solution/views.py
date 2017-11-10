@@ -42,9 +42,8 @@ def add(request):
 
     send_mail('uWindsor POTW - ' + str(s) + ' Submission Added',
             'A submission has been added for the problem of the week!  Go check it!',
-            'noreply@potw.quinnftw.com',
-            # maybe dont hardcore this?
-            ['perfettq@uwindsor.ca'],
+            'noreply@potw.cs.uwindsor.ca',
+            ['noreply@potw.cs.uwindsor.ca'],
             fail_silently=False)
 
     return problem.views.problem_stats(request, request.POST['year'], request.POST['week'],

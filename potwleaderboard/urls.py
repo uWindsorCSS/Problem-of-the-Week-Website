@@ -1,4 +1,5 @@
 from django.conf.urls import include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import student
 
 urlpatterns = [
@@ -14,3 +15,6 @@ urlpatterns = [
     url(r'^unsubscribe/(.*)/?$', student.views.unsubscribe),
     url(r'^.*$',           include('errorpage.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+

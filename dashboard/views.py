@@ -86,10 +86,10 @@ Email all users that are subsribed that a new problem was posted.
 def email_notify(week, nicename):
     subject = 'uWindsor POTW Week ' + str(week) + ' Posted'
     message = "Problem of the week " + str(week) +\
-            " - " + nicename + ", has been posted at http://potw.quinnftw.com. " +\
-            "Good luck!\n\nhttp://potw.quinnftw.com/unsubscribe/{}"
+            " - " + nicename + ", has been posted at https://potw.cs.uwindsor.ca " +\
+            "Good luck!\n\nhttp://potw.cs.uwindsor.ca/unsubscribe/{}"
 
-    from_email = "noreply@potw.quinnftw.com"
+    from_email = "noreply@potw.cs.uwindsor.ca"
 
     message_datas = [(subject, message.format(str(s)), from_email,
         [str(s) + "@uwindsor.ca"])\
@@ -144,7 +144,7 @@ def accept_sub(request):
 
     send_mail('uWindsor POTW - Submission Accepted',
             "Your submission for " + str(s) + " has been accepted!  Good work!",
-            'noreply@potw.quinnftw.com',
+            'noreply@potw.cs.uwindsor.ca',
             [str(s.student) + "@uwindsor.ca"],
             fail_silently=False)
 
@@ -176,7 +176,7 @@ def decline_sub(request):
             "Your submission for " + str(s) + " has been declined!\n"\
             +"Reason: " + request.POST['reason'] + "\n"\
             +"Give it another shot!",
-            'noreply@potw.quinnftw.com',
+            'noreply@potw.cs.uwindsor.ca',
             [str(s.student) + "@uwindsor.ca"],
             fail_silently=False)
     return redirect('/dashboard/submission/all')

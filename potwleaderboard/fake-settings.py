@@ -23,7 +23,7 @@ SECRET_KEY = 's3cretz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = [".quinnftw.com", "localhost"]
+ALLOWED_HOSTS = ["potw.cs.uwindsor.ca", "localhost"]
 
 # Application definition
 INSTALLED_APPS = (
@@ -114,7 +114,7 @@ EMAIL_HOST_PASSWORD = ""
 EMAIL_SECRET = "super-secret"
 
 if DEBUG:
-    SITE_URL = "http://localhost:8000"
+    SITE_URL = "http://potw.cs.uwindsor.ca:80"
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
-    SITE_URL = "http://potw.quinnftw.com"
+    SITE_URL = "http://potw.cs.uwindsor.ca"
