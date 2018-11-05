@@ -11,8 +11,9 @@ def cors_json(resp):
     return r
 
 def solvers(request):
-    # TODO - change this when someone else runs the show.
-    students = Student.objects.exclude(student_id="rorsethj")
+    # Note: student_id should be the UWinID of the person marking submissions
+    # From now on, css@uwindsor.ca will be used
+    students = Student.objects.exclude(student_id="css")
 
     def latest_or_zero(student):
         try:
